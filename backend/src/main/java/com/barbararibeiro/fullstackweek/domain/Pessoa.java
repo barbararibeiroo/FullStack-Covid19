@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 
 @Entity
@@ -18,7 +20,11 @@ public class Pessoa {
 	private String email;
 	private Integer idade;
 	private String dataNascimento;
+	private Boolean isVacinada;
 
+	@ManyToOne
+	@JoinColumn(name="codigo_grupo_prioridade")
+	private GruposPrioridades grupo;
 	
 	public Long getCodigo() {
 		return codigo;

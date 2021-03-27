@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,4 +22,12 @@ public class GruposPrioridadesResource {
 	public List<GruposPrioridades> listarTodos(){
 		return gruposPrioridadesRepository.findAll();
 	}
+	
+	@GetMapping("/{codigo}")
+	public GruposPrioridades burcarPeloCodigo(@PathVariable Long codigo) {
+		return gruposPrioridadesRepository.findById(codigo).orElse(null);
+	}
+	
+	
 }
+
