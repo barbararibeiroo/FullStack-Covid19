@@ -68,6 +68,13 @@ public class Pessoa {
 	public void setDataNascimento(String dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
+	
+	public Boolean getIsVacinada() {
+		return isVacinada;
+	}
+	public void setIsVacinada(Boolean isVacinada) {
+		this.isVacinada = isVacinada;
+	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
